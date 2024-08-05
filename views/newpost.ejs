@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <%- include("./partials/header.ejs") %>
+    <main class="np-form-main">
+      <form method="post">
+        <label for="title">Title:</label>
+        <input
+          type="text"
+          placeholder="Enter Title Here"
+          name="title"
+          id="title"
+          required
+          autofocus
+        />
+        <label for="content">Content:</label>
+        <textarea
+          name="content"
+          id="content"
+          placeholder="Enter Content Here"
+          rows="15"
+        ></textarea>
+        <div class="flex-container-form-button-np">
+          <input
+            type="submit"
+            name="submit"
+            id="submit"
+            value="Post"
+            formaction="/newPost"
+          />
+        </div>
+      </form>
+    </main>
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>

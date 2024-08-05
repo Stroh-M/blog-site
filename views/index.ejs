@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <%- include("partials/header.ejs") %>
+    <main>
+      <h1 class="heading">Welcome to The Bochurim Hub</h1>
+      <article class="posts-section">
+        <div class="grid-container">
+          <% if (locals.content) {%> <% content.forEach(post => {%>
+          <a href="/posts/<%=post.id%>">
+            <div class="post">
+              <div class="post-text">
+                <h1><%= post.title %></h1>
+                <small><%= post.date %></small>
+                <p><%= post.content %></p>
+              </div>
+            </div>
+          </a>
+          <%});%> <% } %>
+        </div>
+      </article>
+      <a href="/newpost" class="post-link-btn"><button class="new-post-btn">+</button></a>
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="btt">▲</button>
+    </main>
+    <%- include("./partials/footer.ejs") %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/functionality.js"></script>
+  </body>
+</html>

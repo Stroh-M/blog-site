@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <%- include("./partials/header.ejs") %>
+
+    <main class="update-form-main">
+      <form method="post">
+        <label for="title">Edit Title:</label>
+        <input type="text" name="title" id="title" autofocus value="<%= content.title %>"/>
+            
+        
+        <label for="content">Edit Content:</label>
+        <textarea name="content" id="content" rows="15"><%= content.content %></textarea>
+
+        <div class="flex-container-form-update">
+        <input type="submit" id="submit" name="submit" value="Update" formaction="/posts/edit/<%= content.id %>"/>
+        <input type="submit" id="submit" name="submit" value="Delete" formaction="/posts/delete/<%= content.id %>">
+      </div>
+      </form>
+    </main>
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>
